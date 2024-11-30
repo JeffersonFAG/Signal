@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
-import Link from "next/link";
 
-const Home = () => {
+import React from "react";
+
+const HomeBanner = () => {
   return (
     <div className="bg-primary text-white flex flex-col items-center justify-center h-screen px-4 text-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-30 animate-slide"></div>
@@ -13,14 +13,12 @@ const Home = () => {
         <p className="text-lg md:text-2xl mb-6">
           Donde impulsar tu marca te llevará a romper los límites de tu negocio.
         </p>
-        <Link href="/brands">
-          <button className="bg-white text-primary font-semibold px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition duration-300">
-            Explorar el Portal
-          </button>
-        </Link>
+        <button className="bg-white text-primary font-semibold px-6 py-3 rounded-md shadow-md hover:bg-gray-200 transition duration-300">
+          Explorar el Portal
+        </button>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default HomeBanner;
