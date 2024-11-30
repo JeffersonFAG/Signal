@@ -23,7 +23,7 @@ export const BrandTable = () => {
 
   return (
     <div className="overflow-x-auto bg-white shadow-md rounded-lg border border-gray-200">
-      <table className="w-full text-sm text-left text-gray-700">
+      <table className="w-full text-sm text-left text-gray-700 hidden md:table">
         <thead className="bg-[#E7344C] text-white">
           <tr>
             <th className="px-4 py-3 font-semibold">#</th>
@@ -71,6 +71,49 @@ export const BrandTable = () => {
           ))}
         </tbody>
       </table>
+      <div className="md:hidden">
+        {brands.map((brand, index) => (
+          <div
+            key={brand.id}
+            className="border rounded-lg p-4 mb-4 shadow-sm bg-gray-50 text-black"
+          >
+            <div className="flex justify-between items-center mb-2">
+              <h2 className="text-lg font-semibold">{brand.name}</h2>
+              <span
+                className={`px-3 py-1 rounded-full ${
+                  brand.status === "Activo"
+                    ? "bg-green-200 text-green-800"
+                    : "bg-yellow-200 text-yellow-800"
+                }`}
+              >
+                {brand.status}
+              </span>
+            </div>
+            <p className="text-sm text-black">
+              <strong>ID</strong> {index + 1}
+            </p>
+            <p className="text-sm text-black">
+              <strong>Titular:</strong> {brand.owner}
+            </p>
+            <div className="flex justify-end gap-2 mt-2">
+              <button
+                className="text-blue-500 hover:text-blue-700 font-semibold transition duration-200"
+                onClick={() => openEditModal(brand)}
+              >
+                <PencilIcon className="h-5 w-5" />
+              </button>
+              <button
+                className="text-red-500 hover:text-red-700 font-semibold transition duration-200"
+                onClick={() => deleteBrand(brand.id!)}
+              >
+                <TrashIcon className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Modal */}
       <BrandFormModal
         isOpen={isModalOpen}
         onClose={closeEditModal}

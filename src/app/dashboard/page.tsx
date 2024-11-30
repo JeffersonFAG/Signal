@@ -30,7 +30,7 @@ const DashboardPage = () => {
     },
   ];
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-black">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 ">
       {cards.map((card, index) => (
         <div
           key={index}
@@ -50,7 +50,7 @@ const DashboardPage = () => {
               <p className="text-sm text-gray-600">{card.description}</p>
             </div>
           </div>
-          <div className="mt-4 text-2xl font-bold text-pink-500">
+          <div className="mt-4 text-2xl font-bold text-pink-500 text-center">
             {card.count}
           </div>
         </div>
