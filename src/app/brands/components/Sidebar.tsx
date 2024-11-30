@@ -6,7 +6,7 @@ import { ITEMS_SIDEBAR } from "@/constant/constant";
 import SidebarItem from "./SideBarItem";
 
 export const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
   return (
     <>
