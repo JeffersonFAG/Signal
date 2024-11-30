@@ -34,5 +34,5 @@ Este proyecto hace uso de las siguientes tecnologías para garantizar una experi
 La estructura del proyecto está organizada en componentes reutilizables para facilitar su mantenimiento y escalabilidad. Aquí se describen los principales componentes:
 
 - **Sidebar**: Barra lateral de navegación con las opciones del panel.
-- **Panel**: Área principal donde se gestionan las marcas, incluyendo formularios para agregar, editar o eliminar marcas.
+- **Panel**: Área principal donde se gestionan las marcas, incluyendo formularios para agregar, editar o eliminar marcas, se deja el estado de la marca como Activo para poder contarla en el panel del dashpboard.
 - **Gestión de Marcas**: Vista que muestra las marcas registradas y sus detalles, permitiendo al usuario realizar un seguimiento de su información.

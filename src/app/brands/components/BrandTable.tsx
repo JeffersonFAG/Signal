@@ -2,19 +2,22 @@ import { useState } from "react";
 import { useBrandStore } from "@/hooks/useBrandStore";
 import { BrandFormModal } from "./BrandFormModal";
 import { PencilIcon, TrashIcon } from "@heroicons/react/24/solid";
+import { Brand } from "@/types/BrandTypes";
 
 export const BrandTable = () => {
   const { brands, deleteBrand } = useBrandStore();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [brandToEdit, setBrandToEdit] = useState(null);
+  const [brandToEdit, setBrandToEdit] = useState<Brand | undefined>(undefined);
 
-  const openEditModal = (brand: any) => {
+  const openEditModal = (
+    brand: Brand | { id?: number; name: string; owner: string; status: string }
+  ) => {
     setBrandToEdit(brand);
     setIsModalOpen(true);
   };
 
   const closeEditModal = () => {
-    setBrandToEdit(null);
+    setBrandToEdit(undefined);
     setIsModalOpen(false);
   };
 
